@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header';
-import Body2 from '../body2';
+import Body2 from '../Body2';
 
 function Mainlogin(){
     return(

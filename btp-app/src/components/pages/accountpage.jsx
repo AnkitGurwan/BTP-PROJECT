@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header';
-import Createaccount from '../createaccount';
+import Createaccount from '../Createaccount';
 
 function Accountpage(){
     return(

@@ -6,18 +6,24 @@ import Studentlogin from './pages/studentloginpage';
 import Accountpage from './pages/accountpage';
 import Createpassword from './pages/createpasswordpage';
 import Resetpassword from './pages/resetpasswordpage';
+import AuthState from '../Context/AuthContext/AuthState';
+import ItemState from "../Context/ItemContext/ItemState"
 
 function App(){
     return(
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<Main/>}/>
-                <Route path='/login' element={<Mainlogin/>}/>
-                <Route path='/studentlogin' element={<Studentlogin/>}/>
-                <Route path='/createaccount' element={<Accountpage/>}/>
-                <Route path='/createpassword' element={<Createpassword/>}/>
-                <Route path='/resetpassword' element={<Resetpassword/>}/>
-            </Routes>
-        </BrowserRouter>  
+        <AuthState>
+            <ItemState>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Main/>}/>
+                    <Route path='/login' element={<Mainlogin/>}/>
+                    <Route path='/studentlogin' element={<Studentlogin/>}/>
+                    <Route path='/createaccount' element={<Accountpage/>}/>
+                    <Route path='/createpassword/:token' element={<Createpassword/>}/>
+                    <Route path='/resetpassword' element={<Resetpassword/>}/>
+                </Routes>
+            </BrowserRouter>  
+            </ItemState>
+        </AuthState>
         )}
 export default App;
